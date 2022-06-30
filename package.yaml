@@ -1,0 +1,52 @@
+name:                parallel-compiler
+version:             0.1.0.0
+github:              "DanProgrammer1999/parallel-compiler"
+license:             BSD3
+author:              "Danyil Dvorianov"
+maintainer:          "daniil.dvoryanov@gmail.com"
+copyright:           "2021 Innopolis University"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/DanProgrammer1999/parallel-compiler#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- accelerate
+- criterion
+- accelerate-llvm
+- accelerate-llvm-native
+
+library:
+  source-dirs: src
+
+executables:
+  parallel-compiler-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - parallel-compiler
+
+tests:
+  parallel-compiler-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - parallel-compiler

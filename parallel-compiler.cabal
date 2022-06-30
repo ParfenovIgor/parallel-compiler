@@ -1,0 +1,75 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2e02dba61a5fc790bd8629b68e9ab3c898650de324a96e3407f7e2e9d1977fac
+
+name:           parallel-compiler
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/DanProgrammer1999/parallel-compiler#readme>
+homepage:       https://github.com/DanProgrammer1999/parallel-compiler#readme
+bug-reports:    https://github.com/DanProgrammer1999/parallel-compiler/issues
+author:         Danyil Dvorianov
+maintainer:     daniil.dvoryanov@gmail.com
+copyright:      2021 Innopolis University
+license:        BSD3
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/DanProgrammer1999/parallel-compiler
+
+library
+  exposed-modules:
+      AccTree
+      Demo
+      Useful
+  other-modules:
+      Paths_parallel_compiler
+  hs-source-dirs:
+      src
+  build-depends:
+      accelerate
+    , accelerate-llvm
+    , accelerate-llvm-native
+    , base >=4.7 && <5
+    , criterion
+  default-language: Haskell2010
+
+executable parallel-compiler-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_parallel_compiler
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      accelerate
+    , accelerate-llvm
+    , accelerate-llvm-native
+    , base >=4.7 && <5
+    , criterion
+    , parallel-compiler
+  default-language: Haskell2010
+
+test-suite parallel-compiler-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_parallel_compiler
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      accelerate
+    , accelerate-llvm
+    , accelerate-llvm-native
+    , base >=4.7 && <5
+    , criterion
+    , parallel-compiler
+  default-language: Haskell2010
