@@ -50,7 +50,7 @@ Gets Matrix and removes last non-zero element in all rows.
 
 * chooseNodes
 
-Gets Matrix, types of nodes and type, and return Matrix with only rows with corresponding type.
+Gets Matrix of tree nodes, Vector of types of nodes and some type, and returns Matrix with only rows with corresponding type.
 
 * isAncestor
 
@@ -58,7 +58,7 @@ Gets two Vectors and checks if one is an ancestor of another.
 
 * countAncestors
 
-Gets Matrix and Matrix of some nodes, and return Matrix, which value is if corresponding vertex in tree has corresponding vertex as ancestor.
+Gets Matrix of tree nodes and Matrix of some nodes, and returns Matrix, which value is if corresponding vertex in tree has corresponding vertex as ancestor.
 
 * buildClosestAncestor
 
@@ -66,4 +66,4 @@ Gets Matrix of ancestors and returns for every node in tree the identifier of cl
 
 * buildClosestAncestorValue
 
-Gets Matrix of some nodes and Vector of closest ancestors out of them and returns for every node the value of closest ancestor.
+Gets Matrix of some nodes and Vector of closest ancestors of tree nodes out of corresponding nodes and returns for every node the Vector of closest ancestor.
