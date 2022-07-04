@@ -37,3 +37,33 @@ Author built in OS Ubuntu 21.10 (Impish Indri)
 		stack run
 
 **Warning**: **Stack** occupies about 10 Gb of storage and first time compiles about 1 hour. Also if amount of RAM is less than 6 Gb, most probably during building the RAM will be run out because of multithreading. You have to either remove multithreading, or make several attempts.
+
+## Implementation Functions
+
+* constructNodeCoordinates
+
+Gets Vector of depths of vertices and builds Matrix of nodes. Each node is a Vector. Root node is vector $1 \\ 0 \\ 0 \dots$. If node $A$ is parent of node $B$, then node $B$'s Vector is node $A$'s Vector, with the most left zero changed to identifier of this child (e.g. for first child - 1, for second - 2).
+
+* removeLastElementInRow
+
+Gets Matrix and removes last non-zero element in all rows.
+
+* chooseNodes
+
+Gets Matrix, types of nodes and type, and return Matrix with only rows with corresponding type.
+
+* isAncestor
+
+Gets two Vectors and checks if one is an ancestor of another.
+
+* countAncestors
+
+Gets Matrix and Matrix of some nodes, and return Matrix, which value is if corresponding vertex in tree has corresponding vertex as ancestor.
+
+* buildClosestAncestor
+
+Gets Matrix of ancestors and returns for every node in tree the identifier of closest ancestor.
+
+* buildClosestAncestorValue
+
+Gets Matrix of some nodes and Vector of closest ancestors out of them and returns for every node the value of closest ancestor.
